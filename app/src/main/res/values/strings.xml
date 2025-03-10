@@ -1,0 +1,10 @@
+<resources>
+    <string name="app_name">Desi Translator</string>
+    <string name="english">English</string>
+    <string name="translate">Translate</string>
+    <string name="telugu">Telugu</string>
+
+    <string name="bannerAdUnitId1">ca-app-pub-7339218345159620/1807363114</string>
+    <string name="bannerAdUnitId2">ca-app-pub-7339218345159620/8906854433</string>
+    <string name="enter_the_sample_text">Enter the Sample Text</string>
+</resources>
