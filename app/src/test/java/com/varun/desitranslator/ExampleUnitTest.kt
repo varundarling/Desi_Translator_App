@@ -1,4 +1,4 @@
-package com.varun.desitanslator
+package com.varun.desitranslator
 
 import org.junit.Test
 

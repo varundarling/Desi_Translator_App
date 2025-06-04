@@ -4,11 +4,11 @@ plugins {
 }
 
 android {
-    namespace = "com.varun.desitanslator"
+    namespace = "com.varun.desitranslator"
     compileSdk = 35
 
     defaultConfig {
-        applicationId = "com.varun.desitanslator"
+        applicationId = "com.varun.desitranslator"
         minSdk = 25
         targetSdk = 35
         versionCode = 1
@@ -49,4 +49,5 @@ dependencies {
 
     implementation(libs.translate)//ML Kit Translate
     implementation(libs.play.services.ads.v2300)//ads version 23.0.0
+    implementation ("com.google.mlkit:translate:17.0.1")
 }
