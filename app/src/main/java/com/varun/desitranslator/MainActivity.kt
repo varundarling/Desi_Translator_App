@@ -25,6 +25,7 @@ import androidx.core.view.WindowInsetsCompat
 import com.google.android.gms.ads.AdRequest
 import com.google.android.gms.ads.AdView
 import com.google.android.gms.ads.MobileAds
+import com.google.android.gms.ads.RequestConfiguration
 import com.google.android.material.snackbar.Snackbar
 import com.google.mlkit.common.model.DownloadConditions
 import com.google.mlkit.nl.translate.TranslateLanguage
@@ -35,7 +36,7 @@ import com.google.mlkit.nl.translate.TranslatorOptions
 class MainActivity : AppCompatActivity() {
     @SuppressLint("MissingInflatedId")
 
-    private lateinit var translator: Translator
+    private lateinit var translator: com.google.mlkit.nl.translate.Translator
     private lateinit var mAdView1: AdView
 //    private lateinit var mAdView2: AdView
 
@@ -59,7 +60,13 @@ class MainActivity : AppCompatActivity() {
 
         setContentView(R.layout.activity_main)
 
-        MobileAds.initialize(this@MainActivity)
+        val requestConfig = RequestConfiguration.Builder()
+            .setTagForChildDirectedTreatment(RequestConfiguration.TAG_FOR_CHILD_DIRECTED_TREATMENT_TRUE)
+            .build()
+
+        MobileAds.setRequestConfiguration(requestConfig)
+
+        MobileAds.initialize(this) { }
         mAdView1 = findViewById(R.id.bannerAdView1)
         val adRequest = AdRequest.Builder().build()
         mAdView1.loadAd(adRequest)
